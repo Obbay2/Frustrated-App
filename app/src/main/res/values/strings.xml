@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Frustrated!</string>
+    <string name="title_activity_main">Frustrated!</string>
+    <string name="stats">Statistics</string>
+    <string name="options">Options</string>
+    <string name="frustrated">I AM FRUSTRATED</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="reset">Reset</string>
+    <string name="description" />
+    <string name="what">I am frustrated by:</string>
+    <string name="level">Frustration Level</string>
+    <string name="blank"/>
+    <string name ="question">What Are You Frustrated With?</string>
+
+</resources>

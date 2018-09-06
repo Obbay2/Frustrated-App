@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+    <string-array name="level">
+        <item>How Frustrated Are You?</item>  
+        <item>Slightly</item>  
+        <item>Moderately</item>  
+        <item>Very</item>  
+        <item>Okay</item>  
+        <item>Cancel</item> 
+   </string-array>
+</resources>

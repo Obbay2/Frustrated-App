@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/frustrated"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/button_change"
+        android:text="@string/frustrated"
+        android:textColor="#ff0000"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/stats"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/frustrated"
+        android:layout_toLeftOf="@+id/options"
+        android:background="@drawable/button_change"
+        android:onClick="pieGraphHandler"
+        android:text="@string/stats"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/options"
+        android:layout_width="140dp"
+        android:layout_height="75dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/frustrated"
+        android:background="@drawable/button_change"
+        android:text="@string/options"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/frustration_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stats"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/options"
+        android:layout_marginBottom="30dp"
+        android:text="@string/blank"
+        android:textSize="15sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/frustration_level"
+        android:layout_alignLeft="@+id/frustration_level"
+        android:layout_alignRight="@+id/frustration_level"
+        android:layout_marginBottom="3dp"
+        android:progressDrawable="@drawable/level" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressBar"
+        android:layout_alignLeft="@+id/progressBar"
+        android:layout_alignRight="@+id/progressBar"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:text="@string/level"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

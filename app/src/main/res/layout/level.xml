@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <Button
+        android:id="@+id/okay"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/cancel"
+        android:background="@drawable/button_change"
+        android:text="@string/blank"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_change"
+        android:text="@string/blank"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/low"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/button_change"
+        android:text="@string/blank"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/moderately"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/low"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_change"
+        android:text="@string/blank"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/highly"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/moderately"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_change"
+        android:text="@string/blank"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/levelQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/blank"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

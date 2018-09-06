@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+    <string-array name="mainList">  
+        <item>Animals</item>  
+        <item>Other</item>  
+        <item>People</item>  
+        <item>Technology</item>  
+        <item>Work</item>  
+   </string-array>
+</resources>

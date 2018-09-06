@@ -5,7 +5,8 @@ import org.achartengine.GraphicalView;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
-import com.powerofpc.db.DatabaseReadWrite;
+
+import com.powerofpc.db.DatabaseHelper;
 import com.powerofpc.frustrated.R;
 import android.app.Activity;
 import android.graphics.Color;
@@ -19,6 +20,7 @@ public class PieGraph extends Activity implements OnClickListener {
 	Button zoomin, zoomout, zoomreset;
 	CategorySeries series = new CategorySeries("Pie Graph");
 	GraphicalView mChartView;
+	DatabaseHelper helper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,6 @@ public class PieGraph extends Activity implements OnClickListener {
 			renderer.addSeriesRenderer(r);
 			r.setDisplayChartValues(true);
 		}
-
 		mChartView = ChartFactory.getPieChartView(this, series, renderer);
 		layout.addView(mChartView);
 		initialize();
@@ -67,7 +68,7 @@ public class PieGraph extends Activity implements OnClickListener {
 
 	private void Series() {
 
-		DatabaseReadWrite helper = new DatabaseReadWrite(PieGraph.this);
+		helper = new DatabaseHelper(getApplicationContext());
 		String[] items = helper.getCount();
 
 		double animals = Double.parseDouble(items[0]);

@@ -7,17 +7,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.powerofpc.db.DatabaseReadWrite;
+import com.powerofpc.db.DatabaseHelper;
 
 public class Level extends Activity implements View.OnClickListener {
 	Button low, medium, high, okay, cancel;
 	TextView question;
 	int selected;
+	DatabaseHelper helper;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.level);
+
+		helper = new DatabaseHelper(getApplicationContext());
 		setupVariables();
 		setupButtons();
 	}
@@ -52,7 +55,6 @@ public class Level extends Activity implements View.OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.okay:
-			DatabaseReadWrite helper = new DatabaseReadWrite(Level.this);
 			if (selected == 1) {
 				helper.setLevel("low");
 			} else if (selected == 2) {

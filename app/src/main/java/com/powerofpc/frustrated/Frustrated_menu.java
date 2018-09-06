@@ -6,19 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.powerofpc.db.DatabaseReadWrite;
+import com.powerofpc.db.DatabaseHelper;
 
 public class Frustrated_menu extends Activity implements View.OnClickListener {
 	Button animals, people, work, technology, other;
-	int ran = 0;
+	DatabaseHelper helper;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.frustrated_menu);
+		helper = new DatabaseHelper(getApplicationContext());
 		setupVariables();
 		setupButtons();
-
 	}
 
 	public void setupButtons() {
@@ -47,8 +47,6 @@ public class Frustrated_menu extends Activity implements View.OnClickListener {
 	}
 
 	public void onClick(View v) {
-
-		DatabaseReadWrite helper = new DatabaseReadWrite(Frustrated_menu.this);
 
 		switch (v.getId()) {
 		case R.id.animals:
@@ -81,7 +79,6 @@ public class Frustrated_menu extends Activity implements View.OnClickListener {
 
 	@Override
 	protected void onPause() {
-		ran = 1;
 		super.onPause();
 		finish();
 	}

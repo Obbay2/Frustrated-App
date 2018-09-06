@@ -15,11 +15,12 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.powerofpc.db.DatabaseReadWrite;
+import com.powerofpc.db.DatabaseHelper;
 import com.powerofpc.frustrated.R;
 
 public class BarGraph extends Activity {
 	TextView total, green, yellow, red, cyan, pink;
+	DatabaseHelper helper;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class BarGraph extends Activity {
 		XYMultipleSeriesRenderer mrenderer = new XYMultipleSeriesRenderer();
 		double[] range = { 0, 5, 0, 5 };
 
-		DatabaseReadWrite helper = new DatabaseReadWrite(BarGraph.this);
+		helper = new DatabaseHelper(getApplicationContext());
 		String[] items = helper.getCount();
 
 		int[] counts = new int[5];
@@ -103,7 +104,7 @@ public class BarGraph extends Activity {
 
 	private XYMultipleSeriesDataset Series() {
 
-		DatabaseReadWrite helper = new DatabaseReadWrite(BarGraph.this);
+		helper = new DatabaseHelper(getApplicationContext());
 		String[] items = helper.getCount();
 		double animals = Double.parseDouble(items[0]);
 		double other = Double.parseDouble(items[1]);

@@ -10,16 +10,18 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.powerofpc.db.DatabaseReadWrite;
+import com.powerofpc.db.DatabaseHelper;
 
 public class Main_menu extends Activity implements View.OnClickListener {
 	Button stats, frustrated, options;
+	DatabaseHelper helper;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_menu);
 
+		helper = new DatabaseHelper(getApplicationContext());
 		setupVariables();
 		setupLevelData();
 
@@ -36,7 +38,6 @@ public class Main_menu extends Activity implements View.OnClickListener {
 
 	public void setupLevelData() {
 		ProgressBar mProgress = (ProgressBar) findViewById(R.id.progressBar);
-		DatabaseReadWrite helper = new DatabaseReadWrite(Main_menu.this);
 		String[] countByLevel = helper.getLevel();
 		TextView level;
 		Button frustrated;
